@@ -881,6 +881,16 @@ async function main() {
     }
   }
 
+  if (runCreate) {
+    REPORT.limitations.push('artifact-create: real /artifact-create model turn not driven (handler + skill verifier only)');
+  }
+  if (runStore) {
+    REPORT.limitations.push('artifact-store: save/import/restore not exercised; verification is read-only');
+  }
+  if (runTweaks) {
+    REPORT.limitations.push('artifact-tweaks: real /artifact-tweak model turn not driven (handler + audit only)');
+  }
+
   if (modeAll && args.cdp) {
     try {
       await checkUi(args.cdp, args.url, args.cookie ?? process.env.DSH_VERIFY_COOKIE, join(out, 'ui'));
