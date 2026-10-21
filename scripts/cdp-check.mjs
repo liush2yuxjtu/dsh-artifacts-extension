@@ -3,7 +3,6 @@
  * Minimal CDP driver for verifying the DSH Web artifact panel.
  * Usage: node cdp-check.mjs <ws-url> [--shot out.png] [--eval "js"] [--click "selector"]
  */
-import WebSocket from '/Users/m1/.nvm/versions/node/v22.21.1/lib/node_modules/@deepseek-ai/dsh/node_modules/ws/index.js';
 import { writeFileSync } from 'node:fs';
 
 const wsUrl = process.argv[2];
@@ -13,7 +12,7 @@ const arg = (name) => {
   return i === -1 ? undefined : process.argv[i + 1];
 };
 
-const ws = new WebSocket(wsUrl, { perMessageDeflate: false, maxPayload: 64 * 1024 * 1024 });
+const ws = new WebSocket(wsUrl);
 let seq = 0;
 const pending = new Map();
 const events = [];
@@ -26,8 +25,8 @@ function send(method, params = {}) {
   });
 }
 
-ws.on('message', (buf) => {
-  const msg = JSON.parse(buf.toString());
+ws.addEventListener('message', (event) => {
+  const msg = JSON.parse(String(event.data));
   if (msg.id && pending.has(msg.id)) {
     const { resolve, reject } = pending.get(msg.id);
     pending.delete(msg.id);
@@ -54,8 +53,8 @@ async function evaluate(expression) {
 }
 
 await new Promise((resolve, reject) => {
-  ws.once('open', resolve);
-  ws.once('error', reject);
+  ws.addEventListener('open', resolve, { once: true });
+  ws.addEventListener('error', (event) => reject(new Error(`CDP connect failed: ${event?.message ?? 'error'}`)), { once: true });
 });
 
 await send('Page.enable');
