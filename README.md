@@ -114,6 +114,44 @@ pnpm remove @local/dsh-artifacts
 
 无 Cookie 返回 `401`；未知 slug、目录穿越、符号链接逃逸返回 `404`。
 
+## 插件市场索引
+
+![插件市场](docs/market.png)
+
+仓库发布了格式 1 的市场索引：
+
+```text
+https://raw.githubusercontent.com/liush2yuxjtu/dsh-artifacts-extension/main/market/index.json
+```
+
+索引内容：
+
+- 插件：`@local/dsh-artifacts` 0.1.3
+- 固定到 commit `8e0432d`（可用 `git+https://github.com/liush2yuxjtu/dsh-artifacts-extension.git#<commit>` 安装）
+- 分类：`效率`；标签：`精选`
+- 中文标题：`工件库`
+
+### 在 DSH 中启用
+
+插件市场是 DSH 的实验性 bundle，默认不挂载。需要两步：
+
+1. 把 `@deepseek-ai/dsh-experimental-plugin-market-bundle` 加入 profile 的 `dsh.profile.bundles`；
+2. 配置索引源（任选其一）：
+   - 在 **插件 → 发现** 里添加索引 URL；
+   - 或在 `cordis.patch.yml` 中写入：
+
+```yaml
+- id: plugin-market
+  name: "@deepseek-ai/dsh-plugin-market"
+  config:
+    indexes:
+      - https://raw.githubusercontent.com/liush2yuxjtu/dsh-artifacts-extension/main/market/index.json
+```
+
+完成后打开 **插件 → 发现**，搜索「工件库」即可看到条目；已安装的 profile 会显示「已安装」，未安装的显示安装按钮。
+
+当前本机 `web` profile 已完成上述配置，备份为 `package.json.bak-market` / `cordis.patch.yml.bak-market`。
+
 ## 开发者验证技能
 
 仓库包含一个**不随扩展打包**的 `/verify` 开发技能：
@@ -166,6 +204,7 @@ dsh-artifacts-extension/
   locale/{zh,en}.json           # 插件列表标题与描述
   icon.svg                      # 插件列表 / 侧栏图标
   docs/preview*.png             # README 截图
+  market/index.json             # 格式 1 插件市场索引
   scripts/cdp-check.mjs         # 最小 CDP 驱动，开发用
   skills/verify-dsh-artifacts/  # 开发者 /verify 技能（不打包）
   .github/workflows/ci.yml      # 语法 + 静态验证
