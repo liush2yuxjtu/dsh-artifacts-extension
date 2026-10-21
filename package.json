@@ -1,6 +1,6 @@
 {
   "name": "@local/dsh-artifacts",
-  "version": "0.1.0",
+  "version": "0.1.3",
   "private": true,
   "description": "DSH Web extension: a read-only artifact library sidebar panel plus /artifact-create, /artifact-store, and /artifact-tweak slash commands.",
   "license": "MIT",
