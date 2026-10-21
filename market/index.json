@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "title": {
+    "en": "DSH Artifacts Extension",
+    "zh": "DSH 工件库扩展"
+  },
+  "description": {
+    "en": "A read-only artifact library sidebar panel plus /artifact-create, /artifact-store, and /artifact-tweak commands.",
+    "zh": "只读工件库侧栏面板，以及 /artifact-create、/artifact-store、/artifact-tweak 三条斜杠命令。"
+  },
+  "metadata": {
+    "categories": {
+      "productivity": {
+        "title": {
+          "en": "Productivity",
+          "zh": "效率"
+        }
+      }
+    },
+    "labels": {
+      "featured": {
+        "title": {
+          "en": "Featured",
+          "zh": "精选"
+        }
+      }
+    },
+    "sortKeys": {
+      "stars": {
+        "title": {
+          "en": "Stars",
+          "zh": "星标"
+        },
+        "order": "desc"
+      }
+    }
+  },
+  "plugins": [
+    {
+      "name": "@local/dsh-artifacts",
+      "title": {
+        "en": "Artifacts",
+        "zh": "工件库"
+      },
+      "description": {
+        "en": "Browse and preview standalone HTML artifacts from artifact-store in the sidebar, and drive the artifact-create, artifact-store, and artifact-tweaks skills from slash commands.",
+        "zh": "在侧栏浏览、搜索、预览 artifact-store 里的独立 HTML 工件，并用斜杠命令驱动 artifact-create、artifact-store、artifact-tweaks 三个技能。"
+      },
+      "icon": "../icon.svg",
+      "author": "Liu Shiyu",
+      "homepage": "https://github.com/liush2yuxjtu/dsh-artifacts-extension#readme",
+      "repository": {
+        "url": "https://github.com/liush2yuxjtu/dsh-artifacts-extension"
+      },
+      "metadata": {
+        "category": "productivity",
+        "keywords": [
+          "dsh",
+          "dsh-extension",
+          "artifacts",
+          "artifact-store",
+          "sidebar",
+          "slash-commands"
+        ],
+        "labels": [
+          "featured"
+        ],
+        "sortKeys": {
+          "stars": 0
+        }
+      },
+      "versions": [
+        {
+          "version": "0.1.3",
+          "publishTimestamp": 1792599414,
+          "source": {
+            "type": "git",
+            "url": "https://github.com/liush2yuxjtu/dsh-artifacts-extension",
+            "commit": "8e0432dd2e96a0124def186da3ac7743652b15bc"
+          },
+          "engines": {
+            "dsh": ">=0.2.1-rc.2"
+          }
+        }
+      ]
+    }
+  ]
+}
