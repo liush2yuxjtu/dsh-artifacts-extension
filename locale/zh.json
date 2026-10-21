@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "工件库",
+    "description": "在侧栏浏览、预览 artifact-store 里的独立 HTML 工件，并提供 /artifact-create、/artifact-store 和 /artifact-tweak 命令。"
+  }
+}

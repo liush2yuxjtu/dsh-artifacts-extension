@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Verification output (local evidence only)
+verify-evidence/
+
+# Local QA output
+artifact-qa/
+*.log
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

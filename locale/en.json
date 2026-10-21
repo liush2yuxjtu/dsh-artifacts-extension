@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Artifact Library",
+    "description": "Browse and preview standalone HTML artifacts from artifact-store in the sidebar, with /artifact-create, /artifact-store, and /artifact-tweak commands."
+  }
+}

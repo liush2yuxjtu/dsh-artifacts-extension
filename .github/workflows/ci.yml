@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Syntax
+        run: |
+          node --check index.js
+          node --check client.js
+          node --check scripts/cdp-check.mjs
+          node --check skills/verify-dsh-artifacts/scripts/verify.mjs
+          node --check skills/verify-dsh-artifacts/scripts/ui-verify.mjs
+
+      - name: Static extension verification
+        run: node skills/verify-dsh-artifacts/scripts/verify.mjs --static-only

@@ -1,0 +1,58 @@
+{
+  "name": "@local/dsh-artifacts",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DSH Web extension: a read-only artifact library sidebar panel plus /artifact-create, /artifact-store, and /artifact-tweak slash commands.",
+  "license": "MIT",
+  "author": "Liu Shiyu",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/liush2yuxjtu/dsh-artifacts-extension.git"
+  },
+  "homepage": "https://github.com/liush2yuxjtu/dsh-artifacts-extension#readme",
+  "bugs": {
+    "url": "https://github.com/liush2yuxjtu/dsh-artifacts-extension/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-extension",
+    "dsh-plugin",
+    "artifacts",
+    "artifact-store",
+    "sidebar",
+    "slash-commands"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "engines": {
+    "dsh": ">=0.2.1-rc.2",
+    "node": ">=22"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-sidebar",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  }
+}
