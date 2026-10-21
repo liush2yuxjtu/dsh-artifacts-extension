@@ -38,6 +38,7 @@ Keep raw tool output. Summaries go in `report.md`; do not replace the raw files.
     "artifact-store": { "verdict": "PASS", "repo": "owner/name", "artifacts": 13 },
     "artifact-tweaks": { "verdict": "PASS", "fixture": "/abs/path.html", "checks": 11 }
   },
+  "panel": { "verdict": "PASS", "checks": 8, "viewports": [1280, 1024, 820, 390, 320] },
   "overall": "PASS",
   "limitations": []
 }
@@ -64,6 +65,7 @@ Never write these into the evidence directory:
 | `artifact-create` | verifier exit 0 at 4 widths, no overflow/errors/external, 320 probe clean | verifier exit nonzero or a required visual check fails | no fixture/Chrome | skill not in scope |
 | `artifact-store` | read-only commands pass, schema/hash/count agree, no secrets | schema/hash/count/probe false | repo/cache/network unreachable | — |
 | `artifact-tweaks` | audit all pass, paired browser verifier pass, persistence persists | audit/browser/persistence false | no tweaked fixture/Chrome | — |
+| panel | order, cards, search, detail iframe, copy, 320–1280 no overflow, no console errors | any required panel assertion false | no CDP page or cookie | — |
 
 Overall:
 
@@ -111,6 +113,14 @@ DSH: <version> · Node: <version> · Chrome: <version>
 - audit results:
 - paired browser verifier:
 - persistence:
+- evidence:
+
+## panel
+- verdict:
+- sidebar order / cards:
+- search / detail iframe / copy:
+- viewports / overflow:
+- console errors:
 - evidence:
 
 ## Limitations

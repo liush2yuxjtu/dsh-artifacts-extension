@@ -5,13 +5,13 @@ description: Verify the DSH artifacts extension end to end and all three artifac
 
 # Verify the artifacts extension
 
-Focused verifier for the `dsh-artifacts-extension` repository and its installed `web` profile. It proves four surfaces separately and leaves reproducible evidence: the extension shell (bundle, commands, routes, sidebar panel), `artifact-create`, `artifact-store`, and `artifact-tweaks`. It is developer-only and is not part of the installed bundle.
+Focused verifier for the `dsh-artifacts-extension` repository and its installed `web` profile. It proves five surfaces separately and leaves reproducible evidence: the extension shell (bundle, commands, routes), the 工件 panel, `artifact-create`, `artifact-store`, and `artifact-tweaks`. It is developer-only and is not part of the installed bundle.
 
 ## Claim
 
 The installed extension must expose exactly three slash commands and one read-only 工件 panel without disabling any shipped plugin, and each of the three artifact skills it fronts must pass its own verifier against the current store or a disposable fixture without mutating user data.
 
-An overall **PASS** requires all four surfaces to pass in the same run. A green panel does not prove a skill, and a green skill verifier does not prove the command or panel wiring.
+An overall **PASS** requires all five surfaces to pass in the same run. A green panel does not prove a skill, and a green skill verifier does not prove the command or panel wiring.
 
 ## Surface map
 
@@ -104,11 +104,11 @@ Use exactly one verdict per surface:
 
 Overall:
 
-| Extension | create | store | tweaks | Overall |
-|---|---|---|---|---|
-| PASS | PASS | PASS | PASS | **PASS** |
-| PASS | PASS | PASS | SKIP | **PASS (three of four)** |
-| any FAIL | | | | **FAIL** |
-| any BLOCKED without a PASS substitute | | | | **BLOCKED** |
+| Extension | create | store | tweaks | panel | Overall |
+|---|---|---|---|---|---|
+| PASS | PASS | PASS | PASS | PASS | **PASS** |
+| PASS | PASS | PASS | PASS | SKIP | **PASS (four of five)** |
+| any FAIL | | | | | **FAIL** |
+| any BLOCKED without a PASS substitute | | | | | **BLOCKED** |
 
 State separately whether the real `/artifact-create` and `/artifact-tweak` turns were driven. A host-harness PASS proves prompt construction, not model execution.
