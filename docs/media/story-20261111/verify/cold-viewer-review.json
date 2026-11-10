@@ -1,0 +1,195 @@
+{
+  "method": "仅看四张指定图片及其像素裁剪放大图；未读仓库、README或其他资料。各图判断只使用本图证据。原始回答写在修复建议之前。",
+  "verdict_rule": "能独立复原一个具体问题、操作、结果，且关键文字可读才 PASS。寻找已有清单是明确标注的任务推断；看不到的功能不计入通过范围。",
+  "result": "四张均 PASS：共同证明搜索并查看既有发布清单。完整视频额外显示复制成功反馈；两个 preview 均无复制完成证据。",
+  "reviews": [
+    {
+      "file": "A.png",
+      "original_dimensions": [
+        2560,
+        1600
+      ],
+      "frames": 16,
+      "original_readability": "整张可辨认 Artifacts、Release checklist、release、2 / 3 与 Copy path；底部 Copied 很小，需放大确认。",
+      "raw_answer": {
+        "who_problem": "观察：DSH Local Build 的 Artifacts 页面有 6 个条目。推断：使用者需要找回既有的发布检查表并取得其路径；人物身份不明。",
+        "controls_action": "观察：在 Search title, description, or tag 输入 release，列表缩为 Release checklist；随后进入该条目详情；末段光标位于 Copy path。",
+        "before_after_result": "观察：6 张卡片变成 1 张 Release checklist，再出现同名预览。预览显示 2 / 3，Write announcement 和 Prepare screenshots 已勾选，Publish update 未勾选。末段底部疑似 Copied，待放大核实。",
+        "utility": "推断：可在多个既有产物中定位发布检查表，查看已完成事项，并取得引用路径。",
+        "cannot_prove": [
+          "使用者身份与具体任务背景",
+          "产物如何创建",
+          "2 / 3 状态是否跨会话保存",
+          "复制出的具体路径及实际剪贴板内容",
+          "路径被后续使用",
+          "Open in new tab 的效果"
+        ]
+      },
+      "verdict": "PASS",
+      "zoom": {
+        "used": true,
+        "needed_for_core_story": false,
+        "needed_for_small_confirmation": true,
+        "inspected_frames": [
+          14,
+          16
+        ],
+        "scale": 2
+      },
+      "confirmed_after_zoom": "第 14 帧底部可读 Copied，证明界面反馈复制成功；具体剪贴板内容仍不明。",
+      "necessary_fixes": [
+        "若复制路径是核心卖点，应让 Copied 靠近按钮并放大，或短暂展示复制出的路径。"
+      ],
+      "verdict_scope": "独立证明查找并查看已有清单；放大后也能确认界面复制成功反馈。",
+      "evidence_frames": {
+        "list": [
+          1,
+          2,
+          3
+        ],
+        "search": [
+          4,
+          5,
+          6
+        ],
+        "preview": [
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "copy_feedback": [
+          13,
+          14,
+          15
+        ]
+      }
+    },
+    {
+      "file": "B.png",
+      "original_dimensions": [
+        2560,
+        1600
+      ],
+      "frames": 16,
+      "original_readability": "整张能读出 发布、发布检查清单、2 / 3、撰写公告、准备截图、发布更新；复制反馈很小，需要放大确认。",
+      "raw_answer": {
+        "who_problem": "观察：DSH 本地构建的工件列表有 6 个条目。推断：使用者要找回保存的发布清单，并取得可引用的路径；具体人物不明。",
+        "controls_action": "观察：搜索框输入 发布，列表只剩 发布检查清单；随后打开该卡片；末段光标位于 复制路径 按钮。",
+        "before_after_result": "观察：6 个条目缩为 1 个，进入 发布检查清单 预览；显示 已经保存的发布计划，可以直接接着使用。及 2 / 3。撰写公告、准备截图已勾选，发布更新未勾选。底部出现小提示，疑为 已复制。",
+        "utility": "推断：减少在既有工件中寻找发布清单的步骤，并直接看到待办进度。",
+        "cannot_prove": [
+          "使用者身份",
+          "清单的创建过程",
+          "状态跨会话持久化",
+          "复制出的具体路径和剪贴板内容",
+          "打开新标签页的结果",
+          "已完成发布"
+        ]
+      },
+      "verdict": "PASS",
+      "zoom": {
+        "used": true,
+        "needed_for_core_story": false,
+        "needed_for_small_confirmation": true,
+        "inspected_frames": [
+          14
+        ],
+        "scale": 2
+      },
+      "confirmed_after_zoom": "第 14 帧可读 复制路径 和 已复制；界面反馈复制成功。",
+      "necessary_fixes": [
+        "若复制路径是核心卖点，应放大 已复制 提示或展示复制后的路径。"
+      ],
+      "verdict_scope": "独立证明查找并查看已有清单；放大后也能确认界面复制成功反馈。",
+      "evidence_frames": {
+        "list": [
+          1,
+          2,
+          3
+        ],
+        "search": [
+          4,
+          5,
+          6
+        ],
+        "preview": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "copy_feedback": [
+          13,
+          14
+        ]
+      }
+    },
+    {
+      "file": "A-preview.png",
+      "original_dimensions": [
+        1920,
+        1536
+      ],
+      "frames": 16,
+      "original_readability": "搜索词 release、Release checklist、2 / 3 和三个检查项可直接读出。",
+      "raw_answer": {
+        "who_problem": "观察：一个 Artifacts 列表显示 6 个产物。推断：使用者想从多个已有产物中找出发布清单；产品名称和人物身份不明。",
+        "controls_action": "观察：在 Search title, description, or tag 搜索框输入 release；列表缩为单张 Release checklist，之后出现同名详情预览。推断：选择了该卡片进入详情。",
+        "before_after_result": "观察：最初 6 张卡片，搜索后剩 1 张。详情写有 The saved launch plan, ready to use again.，显示 2 / 3；Write announcement 与 Prepare screenshots 已勾选，Publish update 未勾选。",
+        "utility": "推断：可以定位已有发布清单，并查看当前剩余工作。",
+        "cannot_prove": [
+          "产品名称与用户身份",
+          "Copy path 被点击或复制成功",
+          "跨会话保存状态",
+          "任何检查项在演示中发生变化",
+          "后续编辑、发布或分享"
+        ]
+      },
+      "verdict": "PASS",
+      "verdict_scope": "独立证明查找并查看已有清单；不证明复制路径。",
+      "zoom": {
+        "used": false,
+        "needed_for_core_story": false
+      },
+      "necessary_fixes": [
+        "对查找与预览这一具体链条，无必要修复；若预览要表达复制路径，需要加入 Copy path 点击及可读成功反馈。"
+      ]
+    },
+    {
+      "file": "B-preview.png",
+      "original_dimensions": [
+        1920,
+        1536
+      ],
+      "frames": 16,
+      "original_readability": "发布、发布检查清单、2 / 3 和三个检查项可直接读出。",
+      "raw_answer": {
+        "who_problem": "观察：工件列表中有 6 个条目。推断：使用者需要找出既有发布清单，了解剩余事项；产品名称和人物身份不明。",
+        "controls_action": "观察：搜索框输入 发布，列表缩为单张 发布检查清单；随后出现同名详情。推断：通过该卡片打开预览。",
+        "before_after_result": "观察：6 张卡片变成 1 张；详情文字为 已经保存的发布计划，可以直接接着使用。；显示 2 / 3。撰写公告和准备截图已勾选，发布更新未勾选。",
+        "utility": "推断：能够从工件列表找回发布清单，直接看见尚未完成的发布更新。",
+        "cannot_prove": [
+          "产品名称与用户身份",
+          "复制路径实际被点击或复制成功",
+          "检查项在演示中被改变",
+          "状态跨会话保存",
+          "发布更新真正执行",
+          "任何后续分享或编辑"
+        ]
+      },
+      "verdict": "PASS",
+      "verdict_scope": "独立证明查找并查看已有清单；不证明复制路径。",
+      "zoom": {
+        "used": false,
+        "needed_for_core_story": false
+      },
+      "necessary_fixes": [
+        "对查找与预览这一具体链条，无必要修复；若需表达复制路径，补入复制操作和可读成功提示。"
+      ]
+    }
+  ]
+}

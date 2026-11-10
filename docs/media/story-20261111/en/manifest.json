@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "status": "verified-local-story",
+  "locale": "en",
+  "source": {
+    "environment": "repository-build",
+    "commit": "45ac3f386554fc994b17a7c7f465faeb49cc390e",
+    "pluginHashes": {
+      "index.js": "f360f67b64371cc89eb8a3979098c5b788ab828bec96aae51ea5381c7b5adbe0",
+      "client.js": "3387150f607ecabd3eaa00f137020d454698c995e2745065679dcf37ff4eacef",
+      "package.json": "de1c88937d8d1c561ddbb6d8d2ebc8d0444f9c4e3b43cd695e69f008975c0518",
+      "cordis.patch.yml": "ee6b4a0e6acf9903ebe51a9e1200e81959d60a78728568b49bcbe8f017ff847f"
+    },
+    "version": "0.1.3",
+    "dshCommit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159"
+  },
+  "source_environment": "repository-build",
+  "sample_data_origin": "Manually prepared saved HTML files in a temporary local demonstration store. The same files are served by the unchanged plugin routes.",
+  "scope": "Read-only browsing of manually prepared local sample HTML files; no generation, saving or model capability claim.",
+  "model_calls": 0,
+  "new_api_calls": false,
+  "no_mocked_routes": true,
+  "no_generated_product_frames": true,
+  "recording_host": {
+    "host": "f78c8c8956e1",
+    "platform": "linux",
+    "browser": "150.0.7871.100",
+    "width": 1280,
+    "height": 800,
+    "dpr": 2
+  },
+  "raw_sha256": "2a44581510ebe3e2fdba4d0643c5572d815163a53f72990bc8a5f5bbba809421",
+  "story": {
+    "path": "story.mp4",
+    "duration_s": 13.033333,
+    "editorial_cuts": [],
+    "playback_speed": 1,
+    "audio": false
+  },
+  "gif": {
+    "path": "feature-8s.gif",
+    "start_s": 0.8,
+    "duration_s": 8,
+    "width": 960,
+    "crop_source_pixels": {
+      "x": 280,
+      "y": 0,
+      "width": 1000,
+      "height": 800
+    },
+    "fps": 12,
+    "continuous": true
+  },
+  "result_readable_hold_s": 3.841000000000001,
+  "hashes": {
+    "poster.png": "297de35ac9fd51e2f864461a4b78718b64227114ff909e3dfbac36427762d56e",
+    "story.mp4": "58a0007ba0a2e503852701c0b7ff844ee6e617849d51bdc1ef055ab59aa00aff",
+    "rehearsal.json": "c34107e2a818100231de715349c28655c213f8b5e1e78186c4d8280eff9e2fa9",
+    "gif-contact-sheet.png": "2dbd21df15e342931210072686756c454c22946f669edc7ad729f8a1b2b6e971",
+    "recording.json": "00bbd30f56880b637151850820f7547e8c9148fbba7209d345b05612f171d462",
+    "discovery.json": "0d0ce6e5a6f8cbab59bfacd50c3acb39f4c0d3976c829395284828f5f8d12578",
+    "contact-sheet.png": "41470e2b6e333e47b29aba92a8978c293279575114872677c7c47add396052dd",
+    "preflight.png": "c4e16ba70e3aac54c9682123c12eaa810e3659610d533693ef0763809db7b597",
+    "feature-8s.gif": "45a21aba1f6b887dae095cf4d30278d556a05a07a2b4bce548d0257cd51d1702",
+    "result.png": "90363a167c4c387c5d79cc1ad96a09babab41fe4004bb86579bfebd79b5a2f10",
+    "markers.json": "afc116133eb591bd82a3bcbd5f50c1278d8725104543c0c05827d7b0b13b2e70",
+    "frames/00.png": "f0bfbee6acbefb267fa6fa066de1704a67650476d3098943fb1da03d97debd48",
+    "frames/09.png": "43c39b1851d2121ed5db57e786692c6b0643fbfad245fc7ec365dd60785f7dfe",
+    "frames/07.png": "81834bb0b92398d3c6754995af3fe490961e07afc0785001bb3c7df805c39c2f",
+    "frames/15.png": "e78cda4c56ff5250c1164aab53d54c95799a2cfae491d0a37357b219b5ce1373",
+    "frames/13.png": "dd7ea3d87fea19e9079665818d95771808b482000baf7c2ca5939501990cfada",
+    "frames/11.png": "29e9c213c2cf9f9012805faa1f8e20432b1266a2e98bb53e0aa51fa511326f80",
+    "frames/01.png": "ed597d017f06fc4f6d1fff0faf6b99234542dfd2d5e3c12ada20095238814390",
+    "frames/03.png": "994d2bb931fe1618c8f3f61bad4a4eee2272c8fdfae50e251e1485873dee2912",
+    "frames/05.png": "e0efa50e134d2d6de4cea435ecdff6ecbaa2e7d394ed26577b2419dbd0611f4a",
+    "frames/06.png": "841e41e3b0a088c532bc19fb364dbd2c2002fa9db895e94413f872ad31f09c0e",
+    "frames/08.png": "36f9a50693c44e8b11e660508418a25e5ee671d88b75eba23bfcbd85d66d433e",
+    "frames/14.png": "dcc6f6b6ee1d0e6875c922df5573fcafabcd55b382fa90cb9cba70a9aeedfce0",
+    "frames/04.png": "61977eafbc3b95d58056d642d70192bee693219fb71ddaa049dcc8d102575b2c",
+    "frames/12.png": "66665fbeb15e11962bb3b27f0ad8144092cae1760fa95e0f01b8e7d6db282dbc",
+    "frames/10.png": "5d80b1fe05cc4996321d929653318cc3a86cca999accc8849e6ee33ab411d472",
+    "frames/02.png": "3ad84aaaacdb3daaa141f784421143ce7a2ca7fe97bae09b557df423233c072c",
+    "raw/frames.json": "e0929e96e0c1c533b1d4b7ad7b0031d42f9f49443f465bb82f7bb6efa125903c",
+    "raw/gt.mp4": "2a44581510ebe3e2fdba4d0643c5572d815163a53f72990bc8a5f5bbba809421",
+    "raw/capture.ffconcat": "d610e4cb64542c86a7c68e1509d0b57bea60e6905ded26c3e08e78d517592d81"
+  },
+  "limitations": [
+    "This demonstrates browsing saved files, not AI creation, store synchronization, or tweak generation.",
+    "This is an actual local DSH repository build, not a new production release.",
+    "The 8-second GIF shows finding and previewing the checklist. Clipboard readback was separately verified in the full run.",
+    "The preview is intended for 960px display. Small screens should open the full video.",
+    "Installation conversion impact has not been measured."
+  ],
+  "cold_viewer": {
+    "status": "PASS",
+    "scope": "Find and preview an existing saved checklist. The GIF does not show a completed copy.",
+    "review": "../verify/cold-viewer-review.json",
+    "bindings": "../verify/cold-viewer-bindings.json"
+  },
+  "language_verification": {
+    "locale": "en",
+    "native_ui": "PASS",
+    "sample_content": "PASS",
+    "evidence": [
+      "discovery.json",
+      "poster.png",
+      "contact-sheet.png",
+      "gif-contact-sheet.png"
+    ],
+    "independent_pixel_review": "../verify/cold-viewer-review.json"
+  },
+  "publication": {
+    "status": "PENDING",
+    "requires": "Anonymous remote byte hashes and rendered README media validation after publication."
+  }
+}

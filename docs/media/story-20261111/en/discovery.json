@@ -1,0 +1,21 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "dpr": 2,
+  "locale": "en",
+  "geometry": {
+    "x": 280,
+    "y": 0,
+    "width": 1000,
+    "height": 800
+  },
+  "search": {
+    "x": 363,
+    "y": 153.5,
+    "width": 357,
+    "height": 17
+  },
+  "uiText": "Artifacts\n\nStandalone HTML artifacts stored in artifact-store\n\n6 artifacts\nRefresh\nGitHub repository\nSLASH COMMANDS\n/artifact-create\n/artifact-store\n/artifact-tweak\nAll\nproject 5\nlaunch 1\nW\nWorkshop agenda\nworkshop-agenda\nproject\nNov 10, 2026\nB\nBudget calculator\nbudget-calculator\nproject\nNov 9, 2026\nR\nRelease checklist\nThe saved launch plan, ready to use again.\nlaunch\nNov 8, 2026\nR\nReading list\nreading-list\nproject\nNov 7, 2026\nT\nTeam directory\nteam-directory\nproject\nNov 6, 2026\nP\nProduct brief\nproduct-brief\nproject\nNov 5, 2026\n\nRead-only preview · write with /artifact-store · demo/saved-artifacts"
+}

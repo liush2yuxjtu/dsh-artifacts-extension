@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "at": "2026-11-10T16:26:37.763098+00:00",
+  "scope": "Local story artifacts, independent-review hash bindings and README-to-install links",
+  "locales": [
+    {
+      "locale": "en",
+      "status": "PASS",
+      "duration_s": 13.033333,
+      "gif_duration_s": 8.0,
+      "gif_width": 960,
+      "gif_bytes": 361481,
+      "result_hold_s": 3.841000000000001,
+      "raw_sha256": "2a44581510ebe3e2fdba4d0643c5572d815163a53f72990bc8a5f5bbba809421",
+      "manifest_sha256": "49a129c2114ed37c4f41cdfa02e50a26cb2c8d6cd140eb62ff989a32737424ce",
+      "readme": "README.md",
+      "readme_sha256": "538d5778cdc55383b0595b7f81e8f8047bbcf5b8a168a951e5216760d96d709a"
+    },
+    {
+      "locale": "zh",
+      "status": "PASS",
+      "duration_s": 12.233333,
+      "gif_duration_s": 8.0,
+      "gif_width": 960,
+      "gif_bytes": 326684,
+      "result_hold_s": 4.65,
+      "raw_sha256": "72f8ce8fc568fa0fcae3cdabf90b2edcf58cd72bf7cf3b6fdd7d28cdbd9936e9",
+      "manifest_sha256": "dc81d71b24263ec1bdb5ec4a8e8c8f4826c09b1366d4f427dc9df960e1523bea",
+      "readme": "README.zh-CN.md",
+      "readme_sha256": "5223c5577fce005e6158285a7eb5d5099b06969ff5ae2bc0bee9656766c042a8"
+    }
+  ],
+  "media_hashes_checked": 60,
+  "independent_reviews": 4,
+  "model_calls": 0,
+  "public_delivery": "PENDING: verify remote bytes and rendered README after publication",
+  "conversion_lift": "NOT_MEASURED"
+}

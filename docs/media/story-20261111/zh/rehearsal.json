@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "checks": [
+    "real-profile-plugin-loaded",
+    "six-saved-files-visible",
+    "search-six-to-one",
+    "real-html-iframe-loaded",
+    "copy-path-toast-and-clipboard-readback",
+    "no-match-empty-state",
+    "no-cookie-401",
+    "unknown-slug-404"
+  ],
+  "semantics": true,
+  "interactions": true,
+  "visibleStateTransitions": true,
+  "dependencies": true,
+  "modelCalls": 0
+}

@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+.runtime/
 
 # Verification output (local evidence only)
 verify-evidence/

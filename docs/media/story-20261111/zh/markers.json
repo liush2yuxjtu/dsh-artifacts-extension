@@ -1,0 +1,30 @@
+[
+  {
+    "label": "Six saved artifacts",
+    "elapsed_ms": 7
+  },
+  {
+    "label": "Search saved artifacts",
+    "elapsed_ms": 2040
+  },
+  {
+    "label": "Found the saved release checklist",
+    "elapsed_ms": 2336
+  },
+  {
+    "label": "Open the saved checklist",
+    "elapsed_ms": 4055
+  },
+  {
+    "label": "Saved checklist is readable",
+    "elapsed_ms": 4150
+  },
+  {
+    "label": "Copy the file path",
+    "elapsed_ms": 8792
+  },
+  {
+    "label": "Copied path",
+    "elapsed_ms": 8846
+  }
+]

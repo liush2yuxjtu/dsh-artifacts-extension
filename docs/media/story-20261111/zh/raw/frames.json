@@ -1,0 +1,193 @@
+{
+  "duration_s": 12.22231201171875,
+  "frames": [
+    {
+      "name": "frame-000000.jpg",
+      "elapsed_ms": 0
+    },
+    {
+      "name": "frame-000001.jpg",
+      "elapsed_ms": 42.140869140625
+    },
+    {
+      "name": "frame-000002.jpg",
+      "elapsed_ms": 531.548095703125
+    },
+    {
+      "name": "frame-000003.jpg",
+      "elapsed_ms": 1031.408935546875
+    },
+    {
+      "name": "frame-000004.jpg",
+      "elapsed_ms": 1532.12890625
+    },
+    {
+      "name": "frame-000005.jpg",
+      "elapsed_ms": 1625.9189453125
+    },
+    {
+      "name": "frame-000006.jpg",
+      "elapsed_ms": 1639.1259765625
+    },
+    {
+      "name": "frame-000007.jpg",
+      "elapsed_ms": 1655.375
+    },
+    {
+      "name": "frame-000008.jpg",
+      "elapsed_ms": 1673.0830078125
+    },
+    {
+      "name": "frame-000009.jpg",
+      "elapsed_ms": 1689.5419921875
+    },
+    {
+      "name": "frame-000010.jpg",
+      "elapsed_ms": 1708.30517578125
+    },
+    {
+      "name": "frame-000011.jpg",
+      "elapsed_ms": 1727.010009765625
+    },
+    {
+      "name": "frame-000012.jpg",
+      "elapsed_ms": 1740.761962890625
+    },
+    {
+      "name": "frame-000013.jpg",
+      "elapsed_ms": 1761.56103515625
+    },
+    {
+      "name": "frame-000014.jpg",
+      "elapsed_ms": 1774.942138671875
+    },
+    {
+      "name": "frame-000015.jpg",
+      "elapsed_ms": 1791.85791015625
+    },
+    {
+      "name": "frame-000016.jpg",
+      "elapsed_ms": 1806.534912109375
+    },
+    {
+      "name": "frame-000017.jpg",
+      "elapsed_ms": 2031.360107421875
+    },
+    {
+      "name": "frame-000018.jpg",
+      "elapsed_ms": 2210.8330078125
+    },
+    {
+      "name": "frame-000019.jpg",
+      "elapsed_ms": 2340.67919921875
+    },
+    {
+      "name": "frame-000020.jpg",
+      "elapsed_ms": 2844.1640625
+    },
+    {
+      "name": "frame-000021.jpg",
+      "elapsed_ms": 3341.942138671875
+    },
+    {
+      "name": "frame-000022.jpg",
+      "elapsed_ms": 3658.60498046875
+    },
+    {
+      "name": "frame-000023.jpg",
+      "elapsed_ms": 3673.659912109375
+    },
+    {
+      "name": "frame-000024.jpg",
+      "elapsed_ms": 3689.985107421875
+    },
+    {
+      "name": "frame-000025.jpg",
+      "elapsed_ms": 3706.76806640625
+    },
+    {
+      "name": "frame-000026.jpg",
+      "elapsed_ms": 3722.81591796875
+    },
+    {
+      "name": "frame-000027.jpg",
+      "elapsed_ms": 3736.776123046875
+    },
+    {
+      "name": "frame-000028.jpg",
+      "elapsed_ms": 3753.36181640625
+    },
+    {
+      "name": "frame-000029.jpg",
+      "elapsed_ms": 3769.737060546875
+    },
+    {
+      "name": "frame-000030.jpg",
+      "elapsed_ms": 3787.704833984375
+    },
+    {
+      "name": "frame-000031.jpg",
+      "elapsed_ms": 3803.157958984375
+    },
+    {
+      "name": "frame-000032.jpg",
+      "elapsed_ms": 3820.44091796875
+    },
+    {
+      "name": "frame-000033.jpg",
+      "elapsed_ms": 3836.827880859375
+    },
+    {
+      "name": "frame-000034.jpg",
+      "elapsed_ms": 3855.747802734375
+    },
+    {
+      "name": "frame-000035.jpg",
+      "elapsed_ms": 4102.632080078125
+    },
+    {
+      "name": "frame-000036.jpg",
+      "elapsed_ms": 4129.953125
+    },
+    {
+      "name": "frame-000037.jpg",
+      "elapsed_ms": 4139.822998046875
+    },
+    {
+      "name": "frame-000038.jpg",
+      "elapsed_ms": 4160.751953125
+    },
+    {
+      "name": "frame-000039.jpg",
+      "elapsed_ms": 8495.56005859375
+    },
+    {
+      "name": "frame-000040.jpg",
+      "elapsed_ms": 8513.256103515625
+    },
+    {
+      "name": "frame-000041.jpg",
+      "elapsed_ms": 8529.176025390625
+    },
+    {
+      "name": "frame-000042.jpg",
+      "elapsed_ms": 8547.376953125
+    },
+    {
+      "name": "frame-000043.jpg",
+      "elapsed_ms": 8563.73486328125
+    },
+    {
+      "name": "frame-000044.jpg",
+      "elapsed_ms": 8846.944091796875
+    },
+    {
+      "name": "frame-000045.jpg",
+      "elapsed_ms": 8863.197998046875
+    },
+    {
+      "name": "frame-000046.jpg",
+      "elapsed_ms": 10669.4189453125
+    }
+  ]
+}

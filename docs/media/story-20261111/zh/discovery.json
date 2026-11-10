@@ -1,0 +1,21 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 800
+  },
+  "dpr": 2,
+  "locale": "zh",
+  "geometry": {
+    "x": 280,
+    "y": 0,
+    "width": 1000,
+    "height": 800
+  },
+  "search": {
+    "x": 363,
+    "y": 153.5,
+    "width": 357,
+    "height": 17
+  },
+  "uiText": "工件\n\nartifact-store 中保存的独立 HTML 工件\n\n6 个工件\n刷新\nGitHub 仓库\n斜杠命令\n/artifact-create\n/artifact-store\n/artifact-tweak\n全部\n项目 5\n发布 1\nW\n工作坊议程\nworkshop-agenda\n项目\n2026年11月10日\nB\n预算计算器\nbudget-calculator\n项目\n2026年11月9日\nR\n发布检查清单\n已经保存的发布计划，可以直接接着使用。\n发布\n2026年11月8日\nR\n阅读清单\nreading-list\n项目\n2026年11月7日\nT\n团队名录\nteam-directory\n项目\n2026年11月6日\nP\n产品简介\nproduct-brief\n项目\n2026年11月5日\n\n只读预览 · 写入请用 /artifact-store · demo/saved-artifacts"
+}

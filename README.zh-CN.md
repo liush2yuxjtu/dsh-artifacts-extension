@@ -4,11 +4,15 @@
 
 在 DSH Web 的侧栏加入只读「工件」面板，并提供三条斜杠命令，把 `artifact-create`、`artifact-store`、`artifact-tweaks` 三个技能接进日常使用。
 
-以下截图来自 2026 年 10 月的 DSH 中文界面验证记录，不是本次新增的真实 API 验证证据。
+## 找回已保存的工件
 
-![历史 DSH 中文界面的工件面板](docs/preview.png)
+从六个已保存文件中找到发布清单。输入「发布」，再打开预览。
 
-![历史 DSH 中文界面的工件详情](docs/preview-detail.png)
+[![搜索已有工件并打开发布检查清单](docs/media/story-20261111/zh/feature-8s.gif)](docs/media/story-20261111/zh/story.mp4)
+
+**[查看安装步骤](#安装)** · [观看 12 秒完整实录](docs/media/story-20261111/zh/story.mp4)
+
+这段实录使用本地 DSH 和事先准备的示例 HTML 文件。预览宽度为 960px；小屏幕可打开完整视频放大观看。[素材来源与独立无声验收](docs/media/story-20261111/README.md)。
 
 ## 功能
 
@@ -196,6 +200,14 @@ DSH_VERIFY_COOKIE='<cookie>' \
 证据写入 `verify-evidence/<timestamp>/`（已 gitignore），包含 `report.json`、`report.md`、各 surface 原始输出和截图。
 
 > 不要对真实的 `artifact-store` 仓库运行 `save` / `restore --commit`。验证默认只读；写入路径必须使用一次性仓库并显式说明。
+
+## 历史截图
+
+以下中文截图来自 2026 年 10 月的 DSH 验证记录。当前故事实录见文档开头。
+
+![历史 DSH 中文界面的工件面板](docs/preview.png)
+
+![历史 DSH 中文界面的工件详情](docs/preview-detail.png)
 
 ## 仓库结构
 

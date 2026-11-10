@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-11-10T16:24:38.141Z",
+  "root": "/workspace/scratch/7f2e17124634/artifacts-story",
+  "dsh": null,
+  "node": "v24.22.1",
+  "url": "http://127.0.0.1:3080",
+  "cookieProvided": false,
+  "surfaces": {
+    "extension": {
+      "verdict": "PASS",
+      "checks": [
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: package.json"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: cordis.patch.yml"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: index.js"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: client.js"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: icon.svg"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: locale/en.json"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: locale/zh.json"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "file exists: skills/verify-dsh-artifacts/SKILL.md"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "package name: @local/dsh-artifacts"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "bundle patch declared"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "client platform is web"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "client loads immediately"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "client export declared"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "icon export declared"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "bundle patch inserts id dsh-artifacts"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "bundle patch names the package"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "node --check index.js"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "node --check client.js"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "node --check scripts/cdp-check.mjs"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "host exports apply()"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "host injects commands"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "host injects webServer"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "host injects connection"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "exactly 3 commands (got 3: artifact-create, artifact-store, artifact-tweak)"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "command registered: artifact-create"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "command registered: artifact-store"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "command registered: artifact-tweak"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "exactly 5 routes (got 5)"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "route registered: /dsh-artifacts/list"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "route registered: /dsh-artifacts/preview"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "route registered: /dsh-artifacts/html"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "route registered: /dsh-artifacts/view"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "route registered: /dsh-artifacts/asset"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-create empty input returns error"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-create non-empty returns success"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-create queues one follow-up (got 1)"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "follow-up is a user message"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "follow-up has an id"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "follow-up carries text content"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "follow-up names artifact-create"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "follow-up is frozen"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-store unknown subcommand returns error"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-tweak empty input returns error"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-tweak non-empty returns success"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "artifact-tweak queues one follow-up"
+        },
+        {
+          "name": "extension",
+          "ok": true,
+          "detail": "tweak follow-up names artifact-tweaks"
+        }
+      ],
+      "evidence": {},
+      "blocked": false
+    }
+  },
+  "limitations": [],
+  "out": "/workspace/scratch/7f2e17124634/artifacts-story/verify-evidence/2026-11-10T16-24-38",
+  "finishedAt": "2026-11-10T16:24:38.367Z",
+  "overall": "PASS"
+}

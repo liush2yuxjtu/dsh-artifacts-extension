@@ -1,0 +1,52 @@
+PASS  extension: file exists: package.json
+PASS  extension: file exists: cordis.patch.yml
+PASS  extension: file exists: index.js
+PASS  extension: file exists: client.js
+PASS  extension: file exists: icon.svg
+PASS  extension: file exists: locale/en.json
+PASS  extension: file exists: locale/zh.json
+PASS  extension: file exists: skills/verify-dsh-artifacts/SKILL.md
+PASS  extension: package name: @local/dsh-artifacts
+PASS  extension: bundle patch declared
+PASS  extension: client platform is web
+PASS  extension: client loads immediately
+PASS  extension: client export declared
+PASS  extension: icon export declared
+PASS  extension: bundle patch inserts id dsh-artifacts
+PASS  extension: bundle patch names the package
+PASS  extension: node --check index.js
+PASS  extension: node --check client.js
+PASS  extension: node --check scripts/cdp-check.mjs
+PASS  extension: host exports apply()
+PASS  extension: host injects commands
+PASS  extension: host injects webServer
+PASS  extension: host injects connection
+PASS  extension: exactly 3 commands (got 3: artifact-create, artifact-store, artifact-tweak)
+PASS  extension: command registered: artifact-create
+PASS  extension: command registered: artifact-store
+PASS  extension: command registered: artifact-tweak
+PASS  extension: exactly 5 routes (got 5)
+PASS  extension: route registered: /dsh-artifacts/list
+PASS  extension: route registered: /dsh-artifacts/preview
+PASS  extension: route registered: /dsh-artifacts/html
+PASS  extension: route registered: /dsh-artifacts/view
+PASS  extension: route registered: /dsh-artifacts/asset
+PASS  extension: artifact-create empty input returns error
+PASS  extension: artifact-create non-empty returns success
+PASS  extension: artifact-create queues one follow-up (got 1)
+PASS  extension: follow-up is a user message
+PASS  extension: follow-up has an id
+PASS  extension: follow-up carries text content
+PASS  extension: follow-up names artifact-create
+PASS  extension: follow-up is frozen
+PASS  extension: artifact-store unknown subcommand returns error
+PASS  extension: artifact-tweak empty input returns error
+PASS  extension: artifact-tweak non-empty returns success
+PASS  extension: artifact-tweak queues one follow-up
+PASS  extension: tweak follow-up names artifact-tweaks
+
+Surface verdicts:
+  PASS    extension  (46/46)
+
+Overall: PASS
+Evidence: /workspace/scratch/7f2e17124634/artifacts-story/verify-evidence/2026-11-10T16-24-38

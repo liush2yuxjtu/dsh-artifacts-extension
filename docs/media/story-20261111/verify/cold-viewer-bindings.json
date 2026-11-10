@@ -1,0 +1,27 @@
+{
+  "review_sha256": "2a0747f6935217ba98ce53b9a109850f4e7112aad8eedfcc97fd5b94ec1db29c",
+  "independent_fresh_context": true,
+  "review_inputs": "Only anonymous frame sheets; no README, filenames, storyboard, source or feature explanation.",
+  "bindings": [
+    {
+      "reviewed_file": "A.png",
+      "media_file": "en/contact-sheet.png",
+      "sha256": "41470e2b6e333e47b29aba92a8978c293279575114872677c7c47add396052dd"
+    },
+    {
+      "reviewed_file": "B.png",
+      "media_file": "zh/contact-sheet.png",
+      "sha256": "77464f7ae683f4b44a2a28cdef523123efe11c5ee2d3315f49716b611490ddf8"
+    },
+    {
+      "reviewed_file": "A-preview.png",
+      "media_file": "en/gif-contact-sheet.png",
+      "sha256": "2dbd21df15e342931210072686756c454c22946f669edc7ad729f8a1b2b6e971"
+    },
+    {
+      "reviewed_file": "B-preview.png",
+      "media_file": "zh/gif-contact-sheet.png",
+      "sha256": "b238d92eb7c2979800a95f82e43d8c6f3db722a5d4ab36141d5775e187023c25"
+    }
+  ]
+}

@@ -6,13 +6,15 @@ Browse, search, and preview standalone HTML artifacts in the DeepSeek Harness (D
 
 This independent, MIT-licensed community plugin is packaged as `@local/dsh-artifacts` version `0.1.3`. Install it from this GitHub repository. The package is marked `private: true`; these instructions do not assume an npm registry release.
 
-## Artifact library preview
+## Find a saved artifact
 
-These screenshots come from the repository's October 2026 DSH verification record. They show the Chinese UI and are historical references, not new real API verification evidence.
+Find a saved release checklist among six files. Search for it, then open its preview.
 
-![Historical DSH Chinese UI showing the artifact library sidebar](docs/preview.png)
+[![Search existing artifacts and open the saved release checklist](docs/media/story-20261111/en/feature-8s.gif)](docs/media/story-20261111/en/story.mp4)
 
-![Historical DSH Chinese UI showing artifact details and an isolated preview](docs/preview-detail.png)
+**[Install in a DSH Web profile](#install-in-a-dsh-web-profile)** · [Watch the full 13-second recording](docs/media/story-20261111/en/story.mp4)
+
+This recording uses existing sample HTML files in a local DSH build. The preview is 960px wide; open the video for a larger view on small screens. [Recording source and independent silent review](docs/media/story-20261111/README.md).
 
 ## What the plugin does
 
@@ -185,6 +187,14 @@ The existing README records these historical results from October 22, 2026, usin
 | Panel | PASS | 8/8 |
 
 The cited original report, `verify-evidence/final2/report.md`, was local and ignored by Git. Its raw evidence is not published here. These counts are a historical maintainer record, not a fresh runtime acceptance result or proof of real model execution. Use the published verifier to repeat the checks.
+
+## Historical screenshots
+
+These Chinese screenshots come from the October 2026 DSH verification record. The current English recording is above.
+
+![Historical DSH Chinese UI showing the artifact library sidebar](docs/preview.png)
+
+![Historical DSH Chinese UI showing artifact details and an isolated preview](docs/preview-detail.png)
 
 ## Repository contents
 

@@ -1,0 +1,130 @@
+{
+  "status": "recorded",
+  "locale": "en",
+  "source": {
+    "environment": "repository-build",
+    "commit": "45ac3f386554fc994b17a7c7f465faeb49cc390e",
+    "pluginHashes": {
+      "index.js": "f360f67b64371cc89eb8a3979098c5b788ab828bec96aae51ea5381c7b5adbe0",
+      "client.js": "3387150f607ecabd3eaa00f137020d454698c995e2745065679dcf37ff4eacef",
+      "package.json": "de1c88937d8d1c561ddbb6d8d2ebc8d0444f9c4e3b43cd695e69f008975c0518",
+      "cordis.patch.yml": "ee6b4a0e6acf9903ebe51a9e1200e81959d60a78728568b49bcbe8f017ff847f"
+    },
+    "version": "0.1.3",
+    "dshCommit": "fcc0ad462172522aaf5c93a7b2e01f6b9f0b0159"
+  },
+  "runtime": {
+    "host": "f78c8c8956e1",
+    "platform": "linux",
+    "browser": "150.0.7871.100",
+    "width": 1280,
+    "height": 800,
+    "dpr": 2
+  },
+  "scope": "Read-only browsing of manually prepared local sample HTML files; no generation, saving or model capability claim.",
+  "realProductUI": true,
+  "fixtureUI": false,
+  "mockedRoutes": false,
+  "modelCalls": 0,
+  "apiReceipts": [],
+  "sampleData": [
+    {
+      "slug": "workshop-agenda",
+      "title": "Workshop agenda",
+      "description": "",
+      "tags": [
+        "project"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-10T09:00:00Z",
+      "bytes": 640,
+      "path": "artifacts/workshop-agenda/index.html"
+    },
+    {
+      "slug": "budget-calculator",
+      "title": "Budget calculator",
+      "description": "",
+      "tags": [
+        "project"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-09T09:00:00Z",
+      "bytes": 646,
+      "path": "artifacts/budget-calculator/index.html"
+    },
+    {
+      "slug": "release-checklist",
+      "title": "Release checklist",
+      "description": "The saved launch plan, ready to use again.",
+      "tags": [
+        "launch"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-08T09:00:00Z",
+      "bytes": 839,
+      "path": "artifacts/release-checklist/index.html"
+    },
+    {
+      "slug": "reading-list",
+      "title": "Reading list",
+      "description": "",
+      "tags": [
+        "project"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-07T09:00:00Z",
+      "bytes": 631,
+      "path": "artifacts/reading-list/index.html"
+    },
+    {
+      "slug": "team-directory",
+      "title": "Team directory",
+      "description": "",
+      "tags": [
+        "project"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-06T09:00:00Z",
+      "bytes": 637,
+      "path": "artifacts/team-directory/index.html"
+    },
+    {
+      "slug": "product-brief",
+      "title": "Product brief",
+      "description": "",
+      "tags": [
+        "project"
+      ],
+      "createdAt": "2026-11-01T09:00:00Z",
+      "updatedAt": "2026-11-05T09:00:00Z",
+      "bytes": 634,
+      "path": "artifacts/product-brief/index.html"
+    }
+  ],
+  "checks": [
+    "real-profile-plugin-loaded",
+    "six-saved-files-visible",
+    "search-six-to-one",
+    "real-html-iframe-loaded",
+    "copy-path-toast-and-clipboard-readback",
+    "no-match-empty-state",
+    "no-cookie-401",
+    "unknown-slug-404"
+  ],
+  "captured": {
+    "duration_s": 13.041280029296875,
+    "frames": 52
+  },
+  "proof_interval_s": [
+    4.959,
+    9.158999999999999
+  ],
+  "raw_sha256": "2a44581510ebe3e2fdba4d0643c5572d815163a53f72990bc8a5f5bbba809421",
+  "pageErrors": [],
+  "consoleErrors": null,
+  "evidence_correction": {
+    "original_metadata_sha256": "7d6e3f3059c49133b1cd441840de7f6bfce08054cf129f617ba3e56b2bbec95e",
+    "reason": "The original capture subscribed to pageerror, not console error events. The empty error list is correctly named pageErrors. Console errors were not collected in that original take.",
+    "separate_runtime_recheck": "../verify/runtime-recheck-en.json"
+  }
+}
