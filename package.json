@@ -2,7 +2,7 @@
   "name": "@local/dsh-artifacts",
   "version": "0.1.3",
   "private": true,
-  "description": "DSH Web extension: a read-only artifact library sidebar panel plus /artifact-create, /artifact-store, and /artifact-tweak slash commands.",
+  "description": "DeepSeek Harness (DSH) artifacts plugin: a read-only artifact library sidebar and /artifact-create, /artifact-store, and /artifact-tweak commands.",
   "license": "MIT",
   "author": "Liu Shiyu",
   "repository": {
@@ -20,7 +20,9 @@
     "artifacts",
     "artifact-store",
     "sidebar",
-    "slash-commands"
+    "slash-commands",
+    "deepseek-harness",
+    "dsh-plugins"
   ],
   "type": "module",
   "main": "./index.js",
@@ -35,7 +37,8 @@
     "client.js",
     "cordis.patch.yml",
     "locale/*.json",
-    "icon.svg"
+    "icon.svg",
+    "README.zh-CN.md"
   ],
   "engines": {
     "dsh": ">=0.2.1-rc.2",

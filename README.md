@@ -1,35 +1,42 @@
-# 工件库 · DSH extension
+# DeepSeek Harness Artifacts Plugin
 
-在 DSH Web 的侧栏加入只读「工件」面板，并提供三条斜杠命令，把 `artifact-create`、`artifact-store`、`artifact-tweaks` 三个技能接进日常使用。
+[English](README.md) · [简体中文](README.zh-CN.md)
 
-![工件面板](docs/preview.png)
+Browse, search, and preview standalone HTML artifacts in the DeepSeek Harness (DSH) Web sidebar. The read-only artifact library connects the `artifact-create`, `artifact-store`, and `artifact-tweaks` skills through three slash commands.
 
-![工件详情](docs/preview-detail.png)
+This independent, MIT-licensed community plugin is packaged as `@local/dsh-artifacts` version `0.1.3`. Install it from this GitHub repository. The package is marked `private: true`; these instructions do not assume an npm registry release.
 
-## 功能
+## Artifact library preview
 
-- **侧栏「工件」面板**：位于「插件」和「自动化任务」之间（`order: 5`），浏览 `artifact-store` 缓存中的独立 HTML 工件
-- **搜索 / 标签筛选**：匹配 slug、标题、描述与标签
-- **隔离预览**：在 `sandbox="allow-scripts"` 的 iframe 中运行 `index.html`
-- **新标签页打开**：`/dsh-artifacts/view/<slug>` 注入 `<base>`，相对资源也能加载
-- **三条命令**：
-  - `/artifact-create <描述>` — 启动回合，让 Agent 用 `artifact-create` 技能构建并验证
-  - `/artifact-store [list|status|save|load|history|restore]` — `list` 直接返回列表；写入类子命令启动回合调用 `artifact-store` 技能
-  - `/artifact-tweak <要求>` — 启动回合，让 Agent 用 `artifact-tweaks` 技能加 Tweaks 面板
-- **只读安全边界**：所有路由经过 Host/Origin + 浏览器 Cookie 校验；文件访问做目录穿越与 `realpath` 检查；面板本身不写入 store 或 GitHub
+These screenshots come from the repository's October 2026 DSH verification record. They show the Chinese UI and are historical references, not new real API verification evidence.
 
-## 安装
+![Historical DSH Chinese UI showing the artifact library sidebar](docs/preview.png)
 
-要求：DSH `0.2.1-rc.2` 或兼容版本，Node 22+，`dsh web` 可用。
+![Historical DSH Chinese UI showing artifact details and an isolated preview](docs/preview-detail.png)
 
-### 从 GitHub 安装
+## What the plugin does
+
+- Adds the **Artifacts** panel between **Plugins** and **Automation tasks** in the sidebar, with `order: 5`.
+- Reads the local `artifact-store` cache. Search matches the artifact slug, title, description, and tags. Tag filters combine with search.
+- Shows artifact details, a preview, and a button to copy `artifacts/<slug>/index.html`.
+- Previews `index.html` in an iframe with `sandbox="allow-scripts"`. Open an artifact in a new tab for interactions that require `localStorage`.
+- Opens `/dsh-artifacts/view/<slug>` with an injected `<base>` so relative assets load.
+- Starts the relevant skill through `/artifact-create`, `/artifact-store`, and `/artifact-tweak`.
+
+The panel itself does not write to the store or GitHub. Save, load, history, and restore operations run through the `artifact-store` skill. Click **Refresh** after a write command updates the cache.
+
+## Install in a DSH Web profile
+
+The declared requirements are DSH `>=0.2.1-rc.2`, Node.js `>=22`, and a working `dsh web` installation. The original installation instructions target the `web` profile. A declared version range does not establish runtime compatibility with every later DSH version.
+
+Install from GitHub:
 
 ```bash
 cd ~/.dsh/profiles/web
 pnpm add github:liush2yuxjtu/dsh-artifacts-extension
 ```
 
-然后把 `@local/dsh-artifacts` 追加到 `package.json` 的 `dsh.profile.bundles`：
+Append `@local/dsh-artifacts` to `dsh.profile.bundles` in that profile's `package.json`. Keep the profile's existing dependencies and bundles. The relevant entries are:
 
 ```json
 {
@@ -48,97 +55,78 @@ pnpm add github:liush2yuxjtu/dsh-artifacts-extension
 }
 ```
 
+Then install the profile dependencies:
+
 ```bash
 pnpm install
-# 重启 dsh web，或让 profile HMR 重组
 ```
 
-### 从本地 checkout 安装
+Restart `dsh web`, or let profile HMR recompose the profile. The panel uses the store configured in `~/.dsh/artifact-store.json`. Configure it through the `artifact-store` skill's `init` flow before browsing artifacts.
+
+For a local checkout:
 
 ```bash
 cd ~/.dsh/profiles/web
 pnpm add link:/absolute/path/to/dsh-artifacts-extension
-# 同样把 @local/dsh-artifacts 加入 dsh.profile.bundles
 ```
 
-### 卸载
+Add the same `@local/dsh-artifacts` bundle entry. To uninstall:
 
 ```bash
 cd ~/.dsh/profiles/web
 pnpm remove @local/dsh-artifacts
-# 并从 dsh.profile.bundles 移除 @local/dsh-artifacts
 ```
 
-## 命令
+Remove `@local/dsh-artifacts` from `dsh.profile.bundles` too.
 
-| 命令 | 行为 |
-|---|---|
-| `/artifact-create <描述>` | 构造冻结的用户消息，交给 Agent 加载 `artifact-create` 技能；空参数返回用法错误 |
-| `/artifact-store` | 直接读取 store 缓存并列出工件，不产生模型回合 |
-| `/artifact-store status` | 显示仓库、缓存位置、工件数量 |
-| `/artifact-store list` | 同 `/artifact-store` |
-| `/artifact-store save ...` | 启动回合，让 Agent 用 `artifact-store` 技能保存 |
-| `/artifact-store load <slug>` | 启动回合，让 Agent 用 `artifact-store` 技能加载 |
-| `/artifact-store history <slug>` | 启动回合，查看提交历史 |
-| `/artifact-store restore <slug> <commit>` | 启动回合，恢复旧版本 |
-| `/artifact-store help` | 显示用法 |
-| `/artifact-tweak <要求>` | 构造冻结的用户消息，交给 Agent 加载 `artifact-tweaks` 技能；空参数返回用法错误 |
+## Slash commands
 
-命令结果只写入命令生命周期日志，不进入模型历史。
+The `artifact-create`, `artifact-store`, and `artifact-tweaks` skills must be available to the agent. The extension fronts those skills; it does not package them.
 
-## 面板
+| Command | Behavior |
+| --- | --- |
+| `/artifact-create <description>` | Queues an immutable user message asking the agent to load `artifact-create`, build the artifact, and verify it. Empty input returns a usage error. |
+| `/artifact-store` | Lists artifacts from the local cache without starting a model turn. |
+| `/artifact-store status` | Shows the repository, cache location, and artifact count. |
+| `/artifact-store list` | Lists the cached artifacts. |
+| `/artifact-store save ...` | Starts a turn for the `artifact-store` skill to save an artifact. |
+| `/artifact-store load <slug>` | Starts a turn for the skill to load an artifact. |
+| `/artifact-store history <slug>` | Starts a turn to inspect its version history. |
+| `/artifact-store restore <slug> <commit>` | Starts a turn to restore an older version. |
+| `/artifact-store help` | Shows command usage. |
+| `/artifact-tweak <request>` | Queues an immutable user message asking the agent to load `artifact-tweaks` and add a Tweaks panel. Empty input returns a usage error. |
 
-| 能力 | 说明 |
-|---|---|
-| 列表 | 读取 `~/.dsh/cache/artifact-store/<owner>__<repo>/index.json`，按更新时间倒序 |
-| 搜索 | 匹配 slug、标题、描述、标签 |
-| 标签 | 按出现次数排列，可与搜索叠加 |
-| 详情 | 标题、描述、标签、日期、大小、slug |
-| 预览 | `srcdoc` + sandbox iframe；完整交互走新标签页 |
-| 复制 | 复制 `artifacts/<slug>/index.html` 路径 |
-| 命令提示 | 三个命令按钮可点击复制 |
+Command results are written to command lifecycle logs, not model history. Commands that queue follow-up messages start a turn by design.
 
-面板是只读的。保存、加载、历史和恢复都由 `/artifact-store` 触发技能完成。运行写入命令后点「刷新」更新面板。
+## Storage and security
 
-## Host 路由
+The list reads `~/.dsh/cache/artifact-store/<owner>__<repo>/index.json` and sorts artifacts by update time. Artifact details include the title, description, tags, dates, size, and slug.
 
-所有路由都在 `/dsh-artifacts` 下，并经过 `ctx.connection.requestRejection(req)`：
+Host routes live under `/dsh-artifacts`. Each route calls `ctx.connection.requestRejection(req)` for Host, Origin, and browser Cookie checks. File access checks paths and `realpath` boundaries.
 
-| 路由 | 内容 |
-|---|---|
-| `GET /dsh-artifacts/list` | 工件元数据 JSON |
-| `GET /dsh-artifacts/preview/<slug>` | `preview.png` |
-| `GET /dsh-artifacts/html/<slug>` | 原始 `index.html`（用于 `srcdoc`） |
-| `GET /dsh-artifacts/view/<slug>` | `index.html` + 注入 `<base>` |
-| `GET /dsh-artifacts/asset/<slug>/<path>` | 工件目录内的相对资源 |
+| Route | Response |
+| --- | --- |
+| `GET /dsh-artifacts/list` | Artifact metadata JSON. |
+| `GET /dsh-artifacts/preview/<slug>` | `preview.png`. |
+| `GET /dsh-artifacts/html/<slug>` | Raw `index.html` for the iframe's `srcdoc`. |
+| `GET /dsh-artifacts/view/<slug>` | `index.html` with an injected `<base>`. |
+| `GET /dsh-artifacts/asset/<slug>/<path>` | A relative resource inside the artifact directory. |
 
-无 Cookie 返回 `401`；未知 slug、目录穿越、符号链接逃逸返回 `404`。
+A request without the Cookie returns `401`. Unknown slugs, directory traversal, and symlink escapes return `404`. The preview iframe has no `allow-same-origin`, matching DSH's HTML preview behavior. Artifacts come from the user's own private store and are treated as locally trusted content.
 
-## 插件市场索引
+## Plugin market index
 
-![插件市场](docs/market.png)
+![Historical Chinese UI showing the Artifacts plugin market entry](docs/market.png)
 
-仓库发布了格式 1 的市场索引：
+The repository includes a [format-1 market index](market/index.json):
 
 ```text
 https://raw.githubusercontent.com/liush2yuxjtu/dsh-artifacts-extension/main/market/index.json
 ```
 
-索引内容：
+The index describes `@local/dsh-artifacts` `0.1.3`, pinned to [commit `8e0432d`](https://github.com/liush2yuxjtu/dsh-artifacts-extension/commit/8e0432dd2e96a0124def186da3ac7743652b15bc). Its category is **Productivity**, its maintainer-defined label is **Featured**, and its Chinese title is **工件库**. That label is not an independent endorsement.
 
-- 插件：`@local/dsh-artifacts` 0.1.3
-- 固定到 commit `8e0432d`（可用 `git+https://github.com/liush2yuxjtu/dsh-artifacts-extension.git#<commit>` 安装）
-- 分类：`效率`；标签：`精选`
-- 中文标题：`工件库`
-
-### 在 DSH 中启用
-
-插件市场是 DSH 的实验性 bundle，默认不挂载。需要两步：
-
-1. 把 `@deepseek-ai/dsh-experimental-plugin-market-bundle` 加入 profile 的 `dsh.profile.bundles`；
-2. 配置索引源（任选其一）：
-   - 在 **插件 → 发现** 里添加索引 URL；
-   - 或在 `cordis.patch.yml` 中写入：
+DSH's experimental plugin market bundle is not loaded by default. Add `@deepseek-ai/dsh-experimental-plugin-market-bundle` to the profile's `dsh.profile.bundles`. Then add the index URL in **Plugins → Discover**, or configure it in `cordis.patch.yml`:
 
 ```yaml
 - id: plugin-market
@@ -148,90 +136,74 @@ https://raw.githubusercontent.com/liush2yuxjtu/dsh-artifacts-extension/main/mark
       - https://raw.githubusercontent.com/liush2yuxjtu/dsh-artifacts-extension/main/market/index.json
 ```
 
-完成后打开 **插件 → 发现**，搜索「工件库」即可看到条目；已安装的 profile 会显示「已安装」，未安装的显示安装按钮。
+Open **Plugins → Discover** and search for **工件库**. The original October 2026 maintainer record states that this configuration worked in its local `web` profile. It does not establish the state of another installation.
 
-当前本机 `web` profile 已完成上述配置，备份为 `package.json.bak-market` / `cordis.patch.yml.bak-market`。
+## Troubleshooting
 
-## 开发者验证技能
+| Symptom | Supported action or limit |
+| --- | --- |
+| The panel is empty or reports a missing store. | Configure `~/.dsh/artifact-store.json` through the `artifact-store` skill's `init` flow. The panel reads the local cache. |
+| A newly saved artifact does not appear. | Click **Refresh** after the skill updates the cache. The panel is not a live GitHub view. |
+| The first slash command on a blank page becomes a normal prompt. | Enter an existing session, then use the command. The command catalog depends on an active Client Session. |
+| An artifact needs `localStorage`. | Open the artifact in a new tab. The isolated preview iframe does not include `allow-same-origin`. |
 
-仓库包含一个**不随扩展打包**的 `/verify` 开发技能：
+## Developer verification
 
-```text
-skills/verify-dsh-artifacts/
-```
+The developer-only [verification skill](skills/verify-dsh-artifacts/SKILL.md) is not shipped in the extension package. It checks the extension shell, `artifact-create`, `artifact-store`, `artifact-tweaks`, and the sidebar panel separately. The [evidence guide](skills/verify-dsh-artifacts/references/05-evidence.md) defines verdicts and release requirements.
 
-它按 `verify-dot-pi` 的结构组织：claim → surface map → per-surface references → operating rules → PASS/FAIL/BLOCKED/SKIP。
-
-覆盖五个 surface：
-
-1. **extension** — profile 安装、bundle 行、3 条命令、5 条路由、无 Cookie `401`
-2. **artifact-create** — 用技能自带 `verify-artifact.mjs` 跑 1440/1024/820/390 + 320 探针
-3. **artifact-store** — `status` / `list` / `load` / `history` 只读校验、schema、sha256、计数一致、secret 扫描
-4. **artifact-tweaks** — `audit-tweaks.mjs` 全 pass、配对浏览器校验、无 Tweaks 工件负向对照
-5. **panel** — CDP 驱动侧栏顺序、卡片、搜索、详情 iframe、复制、320–1280 无溢出、无 console error
-
-### 安装到开发者本机
+To make the skill available locally:
 
 ```bash
 ln -s "$PWD/skills/verify-dsh-artifacts" ~/.agents/skills/verify-dsh-artifacts
 ```
 
-### 运行
+Run the static and command-handler harness:
 
 ```bash
-# 静态 + 命令 harness
 node skills/verify-dsh-artifacts/scripts/verify.mjs --static-only
+```
 
-# 全量（需要运行中的 dsh web、Cookie、CDP）
+The full verification needs a running DSH Web process, an authorized browser Cookie, CDP, and the artifact skills:
+
+```bash
 DSH_VERIFY_COOKIE='<cookie>' \
   node skills/verify-dsh-artifacts/scripts/verify.mjs --all \
   --probe-320 --tweaks-browser \
   --cdp 'ws://127.0.0.1:<port>/devtools/page/<id>'
 ```
 
-证据写入 `verify-evidence/<timestamp>/`（已 gitignore），包含 `report.json`、`report.md`、各 surface 原始输出和截图。
+Evidence is written to ignored `verify-evidence/<timestamp>/`, including JSON, Markdown, raw output, and screenshots. Keep credentials and private artifact bodies out of reports. Do not run `save` or `restore --commit` against the real artifact store during verification. Use an explicitly approved disposable repository for store writes.
 
-> 不要对真实的 `artifact-store` 仓库运行 `save` / `restore --commit`。验证默认只读；写入路径必须使用一次性仓库并显式说明。
+The existing README records these historical results from October 22, 2026, using local `dsh web` and CDP:
 
-## 仓库结构
+| Surface | Recorded verdict | Recorded checks |
+| --- | --- | --- |
+| Extension | PASS | 58/58 |
+| `artifact-create` | PASS | 10/10 |
+| `artifact-store` | PASS | 13/13 |
+| `artifact-tweaks` | PASS | 6/6 |
+| Panel | PASS | 8/8 |
 
-```text
-dsh-artifacts-extension/
-  package.json                  # bundle + dsh.client + locale/icon 导出
-  cordis.patch.yml              # 插入 id: dsh-artifacts 的 Loader 行
-  index.js                      # Host：命令 + 只读路由
-  client.js                     # Client：sidebar.panellist / main + 面板 UI
-  locale/{zh,en}.json           # 插件列表标题与描述
-  icon.svg                      # 插件列表 / 侧栏图标
-  docs/preview*.png             # README 截图
-  market/index.json             # 格式 1 插件市场索引
-  scripts/cdp-check.mjs         # 最小 CDP 驱动，开发用
-  skills/verify-dsh-artifacts/  # 开发者 /verify 技能（不打包）
-  .github/workflows/ci.yml      # 语法 + 静态验证
-  LICENSE                       # MIT
-```
+The cited original report, `verify-evidence/final2/report.md`, was local and ignored by Git. Its raw evidence is not published here. These counts are a historical maintainer record, not a fresh runtime acceptance result or proof of real model execution. Use the published verifier to repeat the checks.
 
-## 验证结果
+## Repository contents
 
-最近一次全量验证（2026-10-22，本地 `dsh web` + CDP）：
+| Path | Purpose |
+| --- | --- |
+| [package.json](package.json) | Bundle manifest, client entry, locale exports, and compatibility declarations. |
+| [cordis.patch.yml](cordis.patch.yml) | Loader row with `id: dsh-artifacts`. |
+| [index.js](index.js) | Host commands and read-only routes. |
+| [client.js](client.js) | Sidebar panel registration and UI. |
+| [locale](locale) | English and Chinese plugin-list text. |
+| [market/index.json](market/index.json) | Format-1 market index. |
+| [scripts/cdp-check.mjs](scripts/cdp-check.mjs) | Development CDP helper. |
+| [skills/verify-dsh-artifacts](skills/verify-dsh-artifacts) | Developer verification workflow and scripts. |
+| [.github/workflows/ci.yml](.github/workflows/ci.yml) | Syntax and static checks. |
 
-| Surface | Verdict | Checks |
-|---|---|---|
-| extension | PASS | 58/58 |
-| artifact-create | PASS | 10/10 |
-| artifact-store | PASS | 13/13 |
-| artifact-tweaks | PASS | 6/6 |
-| panel | PASS | 8/8 |
+## Related plugin
 
-证据：`verify-evidence/final2/report.md`（本地，gitignored）。
-
-## 已知行为
-
-- 面板读本地缓存，不是实时 GitHub。保存后点「刷新」。
-- 斜杠命令目录依赖已有 Client Session；在全新空白页里第一条 `/artifact-*` 可能作为普通提示提交（DSH 的 `/goal` 等 Host 命令同样如此）。进入任意会话后再用。
-- 预览 iframe 不带 `allow-same-origin`，与 DSH 自带 HTML 预览一致；依赖 `localStorage` 的工件请在新标签页打开。
-- 工件内容来自用户自己的私有仓库，按本地受信内容处理。
+[DSH Sidebar History](https://liush2yuxjtu.github.io/dsh-sidebar-history/) shows TODO progress and the latest saved reply in session history cards. This plugin provides the read-only artifact library panel. They address different tasks.
 
 ## License
 
-MIT © Liu Shiyu
+[MIT](LICENSE) © Liu Shiyu. This is not an official DeepSeek product.
