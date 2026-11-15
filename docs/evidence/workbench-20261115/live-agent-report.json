@@ -1,0 +1,6 @@
+{
+  "verdict": "BLOCKED",
+  "model_execution": "not started",
+  "credential_values_logged": false,
+  "reason": "Official API transport blocked: Tunnel connection failed: 403 Forbidden"
+}

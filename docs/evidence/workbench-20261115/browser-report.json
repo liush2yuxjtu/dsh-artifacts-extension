@@ -1,0 +1,85 @@
+{
+  "url": "http://127.0.0.1:3100",
+  "browser": "Chromium via local Playwright",
+  "fallback": "Browser plugin not available; ego-browser CLI not installed on Linux",
+  "checks": [
+    {
+      "name": "identity and meaningful first screen",
+      "ok": true
+    },
+    {
+      "name": "Docs text and saved version",
+      "ok": true
+    },
+    {
+      "name": "Docs reload persistence",
+      "ok": true
+    },
+    {
+      "name": "Docs historical restore appends a version",
+      "ok": true
+    },
+    {
+      "name": "Slides text, geometry and reordering",
+      "ok": true
+    },
+    {
+      "name": "Design local Properties and undo/redo",
+      "ok": true
+    },
+    {
+      "name": "Global Tweaks preview/cancel/apply and artboard follow",
+      "ok": true
+    },
+    {
+      "name": "Data edit, chart configuration and non-destructive filter",
+      "ok": true
+    },
+    {
+      "name": "Whiteboard connections, grouping, movement and negative bounds",
+      "ok": true
+    },
+    {
+      "name": "HTML interactions, error visibility and pinned Agent request UI",
+      "ok": true
+    },
+    {
+      "name": "all six editors fit 320px and 390px without body overflow",
+      "ok": true
+    },
+    {
+      "name": "dark-mode editor remains usable",
+      "ok": true
+    },
+    {
+      "name": "no native app runtime errors",
+      "ok": true
+    }
+  ],
+  "screenshots": [
+    "verify-evidence/native-candidate/browser/docs-desktop.png",
+    "verify-evidence/native-candidate/browser/slides-desktop.png",
+    "verify-evidence/native-candidate/browser/design-tweaks-preview.png",
+    "verify-evidence/native-candidate/browser/design-desktop.png",
+    "verify-evidence/native-candidate/browser/data-desktop.png",
+    "verify-evidence/native-candidate/browser/whiteboard-desktop.png",
+    "verify-evidence/native-candidate/browser/docs-mobile.png",
+    "verify-evidence/native-candidate/browser/slides-mobile.png",
+    "verify-evidence/native-candidate/browser/design-mobile.png",
+    "verify-evidence/native-candidate/browser/data-mobile.png",
+    "verify-evidence/native-candidate/browser/whiteboard-mobile.png",
+    "verify-evidence/native-candidate/browser/html-mobile.png",
+    "verify-evidence/native-candidate/browser/dark-mode.png"
+  ],
+  "artifacts": {
+    "docs": "f83365aa-1bd0-4158-8984-5859587ba9fe",
+    "slides": "3e6dd29c-df4f-4f93-8fc9-9c4957f9ae46",
+    "design": "e6c25ff9-e68d-45c3-b645-af073f92a4ec",
+    "data": "afff5b40-fe62-4776-b34a-9003324c2e09",
+    "whiteboard": "f62ec43e-ddf7-469f-a605-c1f2f4b6dded",
+    "html": "565c61fc-81b6-4703-96af-53da91425f19"
+  },
+  "errors": [],
+  "expected_preview_errors": 3,
+  "verdict": "PASS"
+}

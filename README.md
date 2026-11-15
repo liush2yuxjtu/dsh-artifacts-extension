@@ -2,7 +2,9 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-Browse, search, and preview standalone HTML artifacts in the DeepSeek Harness (DSH) Web sidebar. The read-only artifact library connects the `artifact-create`, `artifact-store`, and `artifact-tweaks` skills through three slash commands.
+Create and edit local Docs, Slides, Design, Data, Whiteboard and HTML artifacts in DeepSeek Harness (DSH), with version history, reviewable Agent proposals and exports. The existing searchable HTML library and three legacy slash commands remain available.
+
+The multi-type editor is an **unreleased candidate on this branch**. Open **Artifacts → Open workbench**; native creation works without artifact-store configuration. See the [workbench guide](docs/workbench.md) and [candidate verification](docs/workbench-verification.md) for editing, global Tweaks, exports and remaining acceptance. The recordings and historical results below describe the earlier HTML library.
 
 This independent, MIT-licensed community plugin is packaged as `@local/dsh-artifacts` version `0.1.3`. Install it from this GitHub repository. The package is marked `private: true`; these instructions do not assume an npm registry release.
 

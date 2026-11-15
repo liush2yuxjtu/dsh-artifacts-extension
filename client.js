@@ -18,7 +18,9 @@ window.__ModuleLoader__.load({
       zh: {
         panel: '工件',
         title: '工件',
-        intro: 'artifact-store 中保存的独立 HTML 工件',
+        intro: '本地成果工作台与已保存的 HTML 工件',
+        workbench: '打开编辑工作台',
+        editCopy: '编辑本地副本',
         search: '搜索标题、描述或标签',
         all: '全部',
         refresh: '刷新',
@@ -49,7 +51,9 @@ window.__ModuleLoader__.load({
       en: {
         panel: 'Artifacts',
         title: 'Artifacts',
-        intro: 'Standalone HTML artifacts stored in artifact-store',
+        intro: 'Local creative workspace and saved HTML artifacts',
+        workbench: 'Open workbench',
+        editCopy: 'Edit a local copy',
         search: 'Search title, description, or tag',
         all: 'All',
         refresh: 'Refresh',
@@ -450,6 +454,18 @@ window.__ModuleLoader__.load({
         const [query, setQuery] = React.useState('');
         const [activeTag, setActiveTag] = React.useState(null);
         const [selected, setSelected] = React.useState(null);
+        const [workbench, setWorkbench] = React.useState(null);
+        const workbenchFrame = React.useRef(null);
+        React.useEffect(() => {
+          if (!workbench) return undefined;
+          const onMessage = (event) => {
+            if (event.source !== workbenchFrame.current?.contentWindow || event.origin !== new URL(workbench).origin || event.data?.type !== 'dsh-artifacts:close-ready') return;
+            setWorkbench(null);
+            setReloadKey((value) => value + 1);
+          };
+          window.addEventListener('message', onMessage);
+          return () => window.removeEventListener('message', onMessage);
+        }, [workbench]);
         const [htmlState, setHtmlState] = React.useState({ status: 'idle' });
         const [toast, setToast] = React.useState('');
         const toastTimer = React.useRef(null);
@@ -568,6 +584,13 @@ window.__ModuleLoader__.load({
 
         const repoUrl = data?.repo ? `https://github.com/${data.repo}` : null;
 
+        if (workbench) {
+          return h('div', { style: { height: '100%', minHeight: 0, display: 'flex', flexDirection: 'column' } },
+            h('style', null, CSS),
+            h('button', { type: 'button', className: 'dsh-art__btn', style: { alignSelf: 'flex-start', margin: '8px 16px' }, onClick: () => workbenchFrame.current?.contentWindow?.postMessage({ type: 'dsh-artifacts:close-request' }, new URL(workbench).origin) }, t.back),
+            h('iframe', { ref: workbenchFrame, title: t.workbench, src: workbench, style: { border: 0, width: '100%', flex: 1, minHeight: '420px' } }));
+        }
+
         if (selected) {
           return h(
             'div',
@@ -602,6 +625,7 @@ window.__ModuleLoader__.load({
                 h(
                   'div',
                   { className: 'dsh-art__detailActions' },
+                  h('button', { type: 'button', className: 'dsh-art__btn', onClick: () => setWorkbench(routeUrl(`/dsh-artifacts/asset/_workbench/?legacy=${encodeURIComponent(selected.slug)}`)) }, t.editCopy),
                   h(
                     'button',
                     {
@@ -683,6 +707,7 @@ window.__ModuleLoader__.load({
               h(
                 'div',
                 { className: 'dsh-art__headActions' },
+                h('button', { type: 'button', className: 'dsh-art__btn', onClick: () => setWorkbench(routeUrl('/dsh-artifacts/asset/_workbench/')) }, t.workbench),
                 state.status === 'ready'
                   ? h('span', { className: 'dsh-art__count' }, countText(t, artifacts.length))
                   : null,

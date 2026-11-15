@@ -1,0 +1,13 @@
+{
+  "index.js": "58a6d3b76a9e3fe529f9a8e4b03c44f8fbf3bc955feb7b5d854e985170901b08",
+  "client.js": "7d3ec4611c7f1e7c902319913907476a3984018b633b5c3333a19bfa52e309b3",
+  "package.json": "a1a58f79015f8d3ff119ff538df15f98e1abb7a665545da90884a6491a7cdb35",
+  "cordis.patch.yml": "ee6b4a0e6acf9903ebe51a9e1200e81959d60a78728568b49bcbe8f017ff847f",
+  "workbench/app.js": "8d63afaf807a1a8ef1454d62e825ecca23127203620f506a6c11f1a0d7c453e0",
+  "workbench/exports.js": "d1e345727b9fa4824a429a2949a574480b7179e0373bd6971aaac5684558cd3f",
+  "workbench/host.js": "e34fc71f049eb29e7a9aad4d659da2c4974469d60490ad37b9e85e83422b4fb6",
+  "workbench/index.html": "3b8202ebf5673dd8db1352bb1650eb118790c41ce6a2344c4818c5fc2c81a0fb",
+  "workbench/model.js": "fbae65eb90232bd4c8125b288ca05750ffb9f4caa4636c80be69e1e83de525a5",
+  "workbench/store.js": "a264e6427d9169fcca008d8f926a87fae8f2e6e31c9acda11fade58c152c96d8",
+  "workbench/workbench.css": "4ca9739a804e925ecf91923d395b018acebb65948ea26d28f83fbb85f11ed33b"
+}

@@ -1,0 +1,18 @@
+PASS  extension: no-cookie list is 401 (got 401)
+PASS  extension: authenticated list 200 JSON (got 200 application/json; charset=utf-8)
+PASS  extension: store configured and cache available
+PASS  extension: list has artifacts (6)
+PASS  extension: preview workshop-agenda is an image (200 image/png)
+PASS  extension: html workshop-agenda is HTML (200)
+PASS  extension: html route returns a document
+PASS  extension: view workshop-agenda is 200
+PASS  extension: view injects artifact base URL
+PASS  extension: asset route serves preview.png
+PASS  extension: unknown preview is 404 (got 404)
+PASS  extension: traversal is 404 (got 404)
+
+Surface verdicts:
+  PASS    extension  (12/12)
+
+Overall: PASS
+Evidence: /workspace/dsh-artifacts-extension/verify-evidence/native-candidate/legacy-http

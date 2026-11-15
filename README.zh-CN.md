@@ -2,7 +2,9 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md)
 
-在 DSH Web 的侧栏加入只读「工件」面板，并提供三条斜杠命令，把 `artifact-create`、`artifact-store`、`artifact-tweaks` 三个技能接进日常使用。
+在 DSH Web 中创建和编辑 Docs、Slides、Design、Data、Whiteboard 与 HTML 成果，提供本地保存、版本历史、Agent 提案审阅和导出。原有 HTML 成果库及三个斜杠命令继续保留。
+
+当前分支中的多类型工作台是**尚未发布的实现候选**。从「工件 → 打开编辑工作台」进入，无须先配置 artifact-store。直接编辑后自动保存；Properties 修改选中对象，全局 Tweaks 先预览再应用；Agent 修改使用绑定成果和版本的命令，审阅后才应用。并行保存冲突会保全双方内容，可恢复为副本。PDF 按钮打开浏览器打印对话框，PNG 由浏览器渲染；DOCX、PPTX 为可编辑内容。完整操作及格式说明见[工作台指南](docs/workbench.md)。下方视频和历史验收只描述旧 HTML 库，不能证明新编辑器或真实模型调用已经通过。
 
 ## 找回已保存的工件
 

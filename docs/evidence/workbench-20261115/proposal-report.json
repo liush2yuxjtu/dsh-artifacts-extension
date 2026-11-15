@@ -1,0 +1,11 @@
+{
+  "verdict": "PASS",
+  "modelCalls": 0,
+  "producer": "synthetic fixture via packaged proposal protocol",
+  "checks": [
+    "review appears after concurrent save",
+    "real DSH proposal preview and apply",
+    "parallel manual title preserved",
+    "parent close awaits save"
+  ]
+}
