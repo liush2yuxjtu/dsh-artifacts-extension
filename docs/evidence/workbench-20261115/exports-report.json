@@ -1,0 +1,89 @@
+{
+  "checks": [
+    {
+      "type": "docs",
+      "ok": true
+    },
+    {
+      "type": "slides",
+      "ok": true
+    },
+    {
+      "type": "design",
+      "ok": true
+    },
+    {
+      "type": "data",
+      "ok": true
+    },
+    {
+      "type": "whiteboard",
+      "ok": true
+    },
+    {
+      "type": "html",
+      "ok": true
+    }
+  ],
+  "files": [
+    "docs.md",
+    "docs.docx",
+    "docs.json",
+    "docs.html",
+    "docs.zip",
+    "docs.pdf",
+    "slides.pptx",
+    "slides.json",
+    "slides.svg",
+    "slides.html",
+    "slides.zip",
+    "slides.png",
+    "slides.pdf",
+    "design.json",
+    "design.svg",
+    "design.html",
+    "design.zip",
+    "design.png",
+    "design.pdf",
+    "data.csv",
+    "data.json",
+    "data.svg",
+    "data.html",
+    "data.zip",
+    "data.png",
+    "data.pdf",
+    "whiteboard.json",
+    "whiteboard.svg",
+    "whiteboard.html",
+    "whiteboard.zip",
+    "whiteboard.png",
+    "whiteboard.pdf",
+    "html.json",
+    "html.html",
+    "html.zip",
+    "html.pdf"
+  ],
+  "imports": [
+    "docs",
+    "slides",
+    "design",
+    "data",
+    "whiteboard",
+    "html"
+  ],
+  "pdf_pages": {
+    "docs": 1,
+    "slides": 2,
+    "design": 3,
+    "data": 1,
+    "whiteboard": 1,
+    "html": 1
+  },
+  "browser": "Chromium",
+  "verdict": "PASS",
+  "native_print_dialog": {
+    "verdict": "BLOCKED",
+    "reason": "Headless Chromium suppresses the native print dialog; shared desktop startup is unavailable."
+  },
+  "pdf_method": "Chromium printToPDF of the actual passive print-frame content"
+}

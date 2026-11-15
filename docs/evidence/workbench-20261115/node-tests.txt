@@ -1,0 +1,30 @@
+
+> @local/dsh-artifacts@0.1.3 test
+> node --test tests/*.test.mjs
+
+✔ every type starts from a valid editable schema (7.186788ms)
+✔ invalid geometry, relationships, themes and resource escapes are rejected (2.800926ms)
+✔ save survives a new instance; restore appends and preserves all history (36.104698ms)
+✔ simultaneous saves produce one winner and a recoverable 409 (64.736091ms)
+✔ a separate Agent CLI proposes without overwriting manual changes (101.905337ms)
+✔ competing Agent and manual text edits preserve both alternatives (32.14385ms)
+✔ source and revision guards reject type changes and missing versions (10.179451ms)
+✔ workspace source symlinks cannot escape the local source directory (5.152188ms)
+✔ three-way merge retains independent object fields and reports array conflicts (2.387501ms)
+✔ data filters preserve raw rows and chart/export values agree (2.821401ms)
+✔ content exports exclude authoring chrome and retain live design links (1.372872ms)
+✔ whiteboard export includes nodes at negative and distant positions (0.700062ms)
+✔ DOCX contains editable text and headings rather than screenshot wrappers (2.875638ms)
+✔ PPTX page sequence, text and positions reflect the current source (2.358017ms)
+✔ ZIP preserves editable source and all artboards; unavailable formats fail clearly (2.462852ms)
+✔ HTML exports inline local scripts, styles and nested CSS resources without a host cookie (1.857203ms)
+✔ real host registration authenticates API and rejects cross-site/non-JSON writes (92.338676ms)
+✔ existing command lifecycle queues a pinned native edit, not an unguarded file rewrite (17.836595ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 636.413661
